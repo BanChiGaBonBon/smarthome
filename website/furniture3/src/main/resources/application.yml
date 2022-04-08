@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: smartHome
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smarthome?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: shifengnanshen
+    #
+  jackson:
+    default-property-inclusion: non_null #
+    date-format: yyyy-MM-dd HH:mm:ss  #
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 1000MB
+mybatis:
+  type-aliases-package: com.example.furniture.pojo
+  mapper-Locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #
+logging:
+  level:
+   root: info
+   com.example.furniture.mapper: debug
